@@ -1,0 +1,27 @@
+/* Escreva uma classe Produto que guarde o código (int) de um produto e o código (int) de seu fabricante. 
+Em seguida, escreva um método que ordene (de modo decrescente) um arranjo de produtos (objetos dessa classe), passado como parâmetro, de acordo com o código do produto. */ 
+
+class Produto {
+
+	int codProduto;
+	int codFabricante;
+
+	Produto(int codProduto, int codFabricante){
+		this.codProduto = codProduto;
+		this.codFabricante = codFabricante;
+	}
+
+	//Usando bubble sort
+
+	static void ordena(Produto[]arr){
+		for(int ult = arr.length-1; ult > 0 ; ult --){
+			for(int i=0; i<ult; i++){
+				if(arr[i].codProduto<arr[i+1].codProduto){
+					Produto aux = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = aux;
+				}
+			}
+		}
+	}
+
